@@ -22,8 +22,11 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "api-key": "0.0.0",
     "core-js": "^2.4.1",
+    "gulp": "^3.9.1",
     "htmlparser": "^1.7.7",
+    "minimatch": "^3.0.4",
     "node-gyp-build": "^3.2.2",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"

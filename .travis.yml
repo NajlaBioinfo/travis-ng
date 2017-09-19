@@ -1,38 +1,33 @@
 language: node_js
 dist: trusty
 sudo: false
-
 node_js:
 - '8'
-
 branches:
   only:
   - master
-
 cache:
   directories:
   - node_modules
-
 script:
 - npm run build.prod
-
 deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: dist
+  provider: npm
+  email: bhndevtools@gmail.com
+  api_key:
+    secure: Tdx/YI6vC5Dk87i5BsB5g7ms2j6NZPGKCm+KGDEAwIDbo+Emzhfgor6GFK9CkrkQ3TOFnZ8ObEUFvi7SkUFhdwi+Jhq1Me+iaiBjIZXypH22byiXsWsx9TUlgHl/d+50j51LOxyThdnR8d8UC1Pv/o9L91PGVQBYARNdjOkFmcNmVEySwPm3XRWb7ao+I6mdz31ya6QYm8KPkyTB9So3XRMA85VwqvRSdK9BMwf/0YSomKHfmCssWcpGu/Cq+zIPVdBGBp1iawgL5q1OEcakW8tzo/hrfvQZh6w5E1lKBuL2I6t+q0+4cvAMTrCM2EepEWzkN2MPs1HSFlRR9idKoTbwe/XY7DTq5cGPtVJ1CFXKQijw4eG5KVsM17aJ3LCQI170HA4oo8kilG+GKXj8nI60IFR14hcz5v2a0t6jhxyYJfYZM1C8tMEX0JdddTWlPdi0y/mAS/g6FQjfcIc/CcLSLT4sZghLlOUMyKIoFfggY/P3cqZBEw1FtSs2kCFdHZmlBXD46ftpaZuuD1Ec3CyHDModC3X0fYVAZ9PDqahydkx6/h7PupdYCgiPzie1cqMC28HGFq7fsv7dm/fkyzSl2o2hLAjSs4J5D1UdTL9lTZNfWtXadfcLbQ6ilA0Cjgv+EPWo0H3QWO38Grwkf1evY0/ygjPMpuRyD5zhlWQ=
   on:
-    branch: master
-
-
+    tags: true
+    repo: NajlaBioinfo/travis-ng
 env:
   global:
-    - DBUS_SESSION_BUS_ADDRESS=/dev/null
-    - secure: "QDefZm9p3/SQ6ts0WVkzwr1qv4tvxpu5hB5ptTGQwRP02oPQumebE+uazSjhrbMf9zCnlrQSaCV7VxMdqQ0GUdAQ+gZz4mr/6SyT1eThTfgqq4GFX24M5dlcWW4rB6ot5NICPnsvASBVDn4IkapTY135/s5fqp2TeDJmAH8xMxKRbsG/b4+KCvhjpO7WJMZumkrwsWFrtAh1zFjrXoHwEySYPkwZceJmSi7GPmjZLodMmSkMxi4vuOAgrx6kWPTuCszKGXm7+Y1UbjeSSoBYLt2c19oy2dJKrER9sSx8/1yeV1C2JJ/cabYBktcn1svUh0lo1j1YOWtEXaIv7SRU694EtWxiuaL8iIcABHdoaLt/BZ34MLG0RdvFu0i2Bv5HxGWQg5TB/Jy502dqkep5ILofF80Ya9NTeapIPSbI3IEWcsCCw+t0pv/91XXU7mduDwtvBtzwxC4nKS4PITjrFTSrsr0wiLagW6ZCbKMrUitEFgedvsa3Tf8wVtt1s/Z7W2iLt81TTVdCei+46PtLIG3k9R1J78WmPLsGJ3uMXo/Cgc7q5PN66Dx6V1RZMBbS9xG0OPxd8a/6Lj94u6QWS1x50osVPEqUqGmT2tWP5fabrDKLUnVLm2Y0O1eBnnu9ew+ccCKou0FCqlx5ppRekBIaMibHbmgahRLMgNbaJR0="
-    - secure: "B/ExbgLfFvBkaguZSIBISQSjjh9e9UvWU9lv9nbIOdfjR7RVcPKBsCzrVlh2CEpy/aS5BvohfFJA+ijn9slOrPYOqtSN9HKd3tSX6mNUTecN4mArtyN1MfZyOLFQNU6dGExFSP95dD7yk5JrXVPaQThRWKJRWrIeaxGY7+9MJqtPa7d2h0I9MkObo9bNri1sPd9QFrRC2Lk8X3YJpc3pWGLSGbCMPv7E7y2nrsG4U1Bc7L2yli8Be8sw5KIz3hY3Rmv6uCcxhjHAvAf0e/OXuD4AQVeCMVWnHcNvAEgzdobLp4RG1SxDC6L04n7U/W9uNXB91fAJg3d7UHvP9w9ZU8a2jyf2qSS4usydx3IJRbQSglqCpu/7S9zlOELgh80sW2RgIKZk00IV8wlfJ6cGi/mRhGcXGJWQRjGHlNglkqevfhCi+Vx9mY2Ic5x/uPLm5l0sxgdSzDbePQYYekk2Sat2jTlWNnvqXQVOijQXAeqIjTnbawOBYWIfMg/MDvJM7kXNVOckPQiz3eGXUqKgpQYEHPZIPeMbKxk/0QvOmssnfvtOsJm1z63JXSRukpFiSEvW1HNLE0aZg/hr/ZwR0/rYlKeBjtuD4COizmFyjOVU7cTzUri+gF6tsdMzBF1+C/0YmweqfTnH9PKUEPEr+WbBrMdfmOpdSmoxe/R0zaI="
-
+  - DBUS_SESSION_BUS_ADDRESS=/dev/null
+  - secure: QDefZm9p3/SQ6ts0WVkzwr1qv4tvxpu5hB5ptTGQwRP02oPQumebE+uazSjhrbMf9zCnlrQSaCV7VxMdqQ0GUdAQ+gZz4mr/6SyT1eThTfgqq4GFX24M5dlcWW4rB6ot5NICPnsvASBVDn4IkapTY135/s5fqp2TeDJmAH8xMxKRbsG/b4+KCvhjpO7WJMZumkrwsWFrtAh1zFjrXoHwEySYPkwZceJmSi7GPmjZLodMmSkMxi4vuOAgrx6kWPTuCszKGXm7+Y1UbjeSSoBYLt2c19oy2dJKrER9sSx8/1yeV1C2JJ/cabYBktcn1svUh0lo1j1YOWtEXaIv7SRU694EtWxiuaL8iIcABHdoaLt/BZ34MLG0RdvFu0i2Bv5HxGWQg5TB/Jy502dqkep5ILofF80Ya9NTeapIPSbI3IEWcsCCw+t0pv/91XXU7mduDwtvBtzwxC4nKS4PITjrFTSrsr0wiLagW6ZCbKMrUitEFgedvsa3Tf8wVtt1s/Z7W2iLt81TTVdCei+46PtLIG3k9R1J78WmPLsGJ3uMXo/Cgc7q5PN66Dx6V1RZMBbS9xG0OPxd8a/6Lj94u6QWS1x50osVPEqUqGmT2tWP5fabrDKLUnVLm2Y0O1eBnnu9ew+ccCKou0FCqlx5ppRekBIaMibHbmgahRLMgNbaJR0=
+  - secure: B/ExbgLfFvBkaguZSIBISQSjjh9e9UvWU9lv9nbIOdfjR7RVcPKBsCzrVlh2CEpy/aS5BvohfFJA+ijn9slOrPYOqtSN9HKd3tSX6mNUTecN4mArtyN1MfZyOLFQNU6dGExFSP95dD7yk5JrXVPaQThRWKJRWrIeaxGY7+9MJqtPa7d2h0I9MkObo9bNri1sPd9QFrRC2Lk8X3YJpc3pWGLSGbCMPv7E7y2nrsG4U1Bc7L2yli8Be8sw5KIz3hY3Rmv6uCcxhjHAvAf0e/OXuD4AQVeCMVWnHcNvAEgzdobLp4RG1SxDC6L04n7U/W9uNXB91fAJg3d7UHvP9w9ZU8a2jyf2qSS4usydx3IJRbQSglqCpu/7S9zlOELgh80sW2RgIKZk00IV8wlfJ6cGi/mRhGcXGJWQRjGHlNglkqevfhCi+Vx9mY2Ic5x/uPLm5l0sxgdSzDbePQYYekk2Sat2jTlWNnvqXQVOijQXAeqIjTnbawOBYWIfMg/MDvJM7kXNVOckPQiz3eGXUqKgpQYEHPZIPeMbKxk/0QvOmssnfvtOsJm1z63JXSRukpFiSEvW1HNLE0aZg/hr/ZwR0/rYlKeBjtuD4COizmFyjOVU7cTzUri+gF6tsdMzBF1+C/0YmweqfTnH9PKUEPEr+WbBrMdfmOpdSmoxe/R0zaI=
 before_script:
-  - "mkdir -p ~/.composer"
-  - cp tsconfig.json ~/.composer/config.json
-
+- mkdir -p ~/.composer
+- cp tsconfig.json ~/.composer/config.json
 after_script:
-  - curl -s -X POST -H "Content-Type:application/json" -H "Accept:application/json"   -H "Travis-API-Version:3" -H "Authorization:token $APITOKEN" -d '{"request":{"message":"Triggered by ITS-CTL build.","branch":"master"}}' https://api.travis-ci.org/repo/Najlabioinfo/travis-ng/request
+- curl -s -X POST -H "Content-Type:application/json" -H "Accept:application/json"   -H
+  "Travis-API-Version:3" -H "Authorization:token $APITOKEN" -d '{"request":{"message":"Triggered
+  by ITS-CTL build.","branch":"master"}}' https://api.travis-ci.org/repo/Najlabioinfo/travis-ng/request
