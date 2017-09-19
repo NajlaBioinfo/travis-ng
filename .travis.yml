@@ -33,7 +33,7 @@ env:
 
 before_script:
   - "mkdir -p ~/.composer"
-  - cp .travis.composer.config.json ~/.composer/config.json
+  - cp tsconfig.json ~/.composer/config.json
 
 after_script:
   - curl -s -X POST -H "Content-Type:application/json" -H "Accept:application/json"   -H "Travis-API-Version:3" -H "Authorization:token $APITOKEN" -d '{"request":{"message":"Triggered by ITS-CTL build.","branch":"master"}}' https://api.travis-ci.org/repo/Najlabioinfo/travis-ng/request
