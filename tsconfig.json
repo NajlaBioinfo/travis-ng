@@ -15,11 +15,6 @@
       "es2017",
       "dom"
     ]
-  },
-  "config": {
-    "github-oauth": {
-      "github.com": "g9CYxqU3Z2BxqcpxAUxc"
-    }
   }
 }
 
